@@ -1,0 +1,51 @@
+
+body {
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+}
+div.wrap {  
+    display: flex;
+    flex-wrap: wrap;
+    margin: 15px;
+}   
+div.box-icon {
+    display: flex;
+    width: 170px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid #f0f0f0;
+    padding: 10px;
+    margin: 5px 7px;
+    background: #f0f0f0;
+}
+div.box-icon i {
+    font-size: 30px;
+}
+div.box-icon span {
+    font-family: Arial, Helvetica, sans-serif;
+    display: block;
+    text-align: center;
+    margin-top: 5px;
+    font-size: 12px;
+}
+
+div.box-example {
+    border: 1px solid #000000;
+    padding: 15px;
+    margin: 30px;
+    width: auto;
+}
+div.box-example span {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+}
+div.box-example p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+}
+div.box-example pre {
+    word-wrap: break-word;
+}
