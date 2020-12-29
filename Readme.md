@@ -14,6 +14,6 @@
     <li>Jika sudah berhasil silahkan anda copy file css yg berada di dalam folder css ke dalam folder css project yang anda akan gunakan</li>
     <li>Dan juga jangan lupa untuk copy folder my-web-fonts ke dalam folder project yang anda akan gunakan</li>
 </ul>
-
+<hr/>
 <p>Untuk membuat custom font icons menggunakan file svg</p>
 <span>By Ugi Ispoyo Widodo</span>
