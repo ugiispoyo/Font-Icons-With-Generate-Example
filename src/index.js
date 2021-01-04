@@ -11,10 +11,27 @@ export default function IconList() {
     const [searchIcon, setSearchIcon] = useState('');
 
     useEffect(() => {
-        if(listIcons.length == 0){
-            addListIcons()
+        if(listIcons.length == 0) {
+            addListIcons();
         }
     })
+    // useEffect(() => {
+
+        // addListIcons();
+        // let listArr = listIcons.filter(icons => icons.includes(searchIcon));
+        // setListIcons(listArr);
+        
+        // if(searchIcon == ''){
+        //     setListIcons([]);
+        //     addListIcons();
+        // } 
+
+        // return () => {
+        //     document.getElementsByClassName('wrap-box-icon').innerHTML = '';
+        //     renderList();
+        // }
+
+    // }, [searchIcon])
 
     const addListIcons = () => {
         listIcons_.map(value =>
@@ -26,7 +43,7 @@ export default function IconList() {
 
         const el = document.createElement('textarea');
 
-        el.value = document.getElementById("value-"+id).value;
+        el.value = document.getElementById(id).value;
         document.body.appendChild(el);
         el.select();
 
@@ -34,41 +51,49 @@ export default function IconList() {
         document.body.removeChild(el);
 
         var tooltip = document.getElementById("myTooltip-"+id);
-        tooltip.innerHTML = "Class copied: " + document.getElementById("value-"+id).value;
+        tooltip.innerHTML = "Class copied: " + document.getElementById(id).value;
+
+        console.log(document.getElementById(id).value);
 
     }
 
     const outFunc = (id) => {
         var tooltip = document.getElementById("myTooltip-"+id);
-        tooltip.innerHTML = "Copy to clipboard";
+        tooltip.innerHTML = "Copy class to clipboard";
     }
+
+    const renderList = () => (
+        listIcons.length != 0 ?
+            listIcons.map((value, key) =>
+                <div className="box-icon" key={key}>
+                    <div className="tooltip">
+                        <button  style={{ position: 'absolute', right: '5px', top: '0px', cursor: 'pointer'}}
+                            onClick={() => copyClass(value) } onMouseOut={() => outFunc(value) }>
+                            <span className="tooltiptext" id={"myTooltip-"+value}>Copy class to clipboard</span>
+                            Copy
+                        </button>
+                        <input style={{display: 'none'}} defaultValue={"icon icon-"+value+""} id={value} />
+                    </div>
+                    <i className={"icon icon-"+ value}></i>
+                    <span style={{ fontWeight: 'bold'}}>{value}</span>
+                </div>
+            )
+        :
+            <span style={{ marginLeft: '7px', color: 'red'}}>Tidak ditemukan!</span>
+    )
     
 
     return (
         <div className="wrap">
             <div className="form-search">
-                <input type="text" placeholder="Cari icons kamu.." value={searchIcon} onChange={(e) => setSearchIcon(e.target.value)} />
+                {/* <input type="text" placeholder="Cari icons kamu.." value={searchIcon} onChange={(e) => setSearchIcon(e.target.value)} /> */}
                 <span>Total icon: <b>{listIcons.filter(icons => icons.includes(searchIcon)).length}</b></span>
             </div>
-            {
-                listIcons.filter(icons => icons.includes(searchIcon)).length != 0 ?
-                    listIcons.filter(icons => icons.includes(searchIcon)).map((value, key) =>
-                        <div className="box-icon" key={key}>
-                            <div className="tooltip">
-                                <button  style={{ position: 'absolute', right: '5px', top: '0px', cursor: 'pointer'}}
-                                    onClick={() => copyClass(key) } onMouseOut={() => outFunc(key) }>
-                                    <span className="tooltiptext" id={"myTooltip-"+key}>Copy class</span>
-                                    Copy
-                                </button>
-                            </div>
-                            <i className={"icon icon-"+ value}></i>
-                            <span style={{ fontWeight: 'bold'}}>{value}</span>
-                            <input style={{display: 'none'}} defaultValue={"icon icon-"+value+""} id={"value-"+key} />
-                        </div>
-                    )
-                :
-                    <span style={{ marginLeft: '7px', color: 'red'}}>Tidak ditemukan!</span>
-            }
+            {/* <div className="wrap-box-icon"> */}
+                {
+                    renderList()
+                }
+            {/* </div> */}
             <div className="box-example">
                 <h1>Contoh penggunaan:</h1>
                 <p>
