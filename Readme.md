@@ -15,8 +15,8 @@
     <li>Ketik "npm run build-watch" untuk build icons dan melihat keseluruhan icons yang telah di convert dengan default local server "http://localhost:8080/"</li>
     <li>Tutup dan ulangin perintah "npm run build-watch" JIKA ADA PENAMBAHAN, PERGANTIAN, ATAU PENGURANGAN FILE ICON .SVG ANDA</li>
     <li>Jika sudah muncul icon-icon yg anda masukan ke dalam folder icons dan contoh penggunaan font iconsnya berarti anda sudah berhasil</li>
-    <li>Jika sudah berhasil silahkan anda copy "file my-font-icons.css yg berada di dalam folder css ke dalam folder css project yang anda akan gunakan"</li>
-    <li>Dan juga jangan lupa untuk copy "folder my-web-fonts ke dalam folder project yang anda akan gunakan:</li>
+    <li>Jika sudah berhasil silahkan anda copy file "my-font-icons.css" yg berada di dalam folder css ke dalam folder css project yang anda akan gunakan</li>
+    <li>Dan juga jangan lupa untuk copy folder "my-web-fonts" ke dalam folder project yang anda akan gunakan:</li>
 </ul>
 <hr/>
 <p>Untuk membuat custom font icons menggunakan file svg</p>
