@@ -22,6 +22,28 @@ export default function IconList() {
         )
     }
 
+    const copyClass = (id) => {
+
+        const el = document.createElement('textarea');
+
+        el.value = document.getElementById("value-"+id).value;
+        document.body.appendChild(el);
+        el.select();
+
+        document.execCommand('copy');
+        document.body.removeChild(el);
+
+        var tooltip = document.getElementById("myTooltip-"+id);
+        tooltip.innerHTML = "Class copied: " + document.getElementById("value-"+id).value;
+
+    }
+
+    const outFunc = (id) => {
+        var tooltip = document.getElementById("myTooltip-"+id);
+        tooltip.innerHTML = "Copy to clipboard";
+    }
+    
+
     return (
         <div className="wrap">
             <div className="form-search">
@@ -30,10 +52,18 @@ export default function IconList() {
             </div>
             {
                 listIcons.filter(icons => icons.includes(searchIcon)).length != 0 ?
-                    listIcons.filter(icons => icons.includes(searchIcon)).map(value =>
-                        <div className="box-icon" key={value}>
+                    listIcons.filter(icons => icons.includes(searchIcon)).map((value, key) =>
+                        <div className="box-icon" key={key}>
+                            <div className="tooltip">
+                                <button  style={{ position: 'absolute', right: '5px', top: '0px', cursor: 'pointer'}}
+                                    onClick={() => copyClass(key) } onMouseOut={() => outFunc(key) }>
+                                    <span className="tooltiptext" id={"myTooltip-"+key}>Copy class</span>
+                                    Copy
+                                </button>
+                            </div>
                             <i className={"icon icon-"+ value}></i>
-                            <span>{"icon icon-"+value}</span>
+                            <span style={{ fontWeight: 'bold'}}>{value}</span>
+                            <input style={{display: 'none'}} defaultValue={"icon icon-"+value+""} id={"value-"+key} />
                         </div>
                     )
                 :
