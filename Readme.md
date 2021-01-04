@@ -5,7 +5,7 @@
     <li>Pastikan laptop atau pc kalian anda sudah terinstall nodejs</li>
     <li>Siapkan file .svg anda</li>
     <li>Hapus semua icons contoh yang berada di dalam folder icons</li>
-    <li>Copy semua file .svg anda kedalam folder icons "Dengan catatan warna icons anda harus berwarna hitam"</li>
+    <li>Copy semua file .svg anda kedalam folder icons "Dengan catatan warna icons anda harus berwarna hitam" & "nama icons akan digunakan untuk pemanggilan class icons di html, di harapkan harus disesuaikan dengan nama yang anda inginkan"</li>
     <li>Kemudian masuk kedalam terminal dan menuju folder project ini</li>
     <li>Ketik "npm install"</li>
     <li>Ketik "npm run build"</li>
