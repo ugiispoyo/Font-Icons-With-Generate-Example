@@ -20,4 +20,4 @@
 </ul>
 <hr/>
 <p>Untuk membuat custom font icons menggunakan file svg</p>
-<span>By Ugi Ispoyo Widodo</span>
+<span>By: Ugi Ispoyo Widodo</span>
