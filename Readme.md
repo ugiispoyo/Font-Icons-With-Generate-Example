@@ -1,4 +1,8 @@
-<h1>Cara menggunakan</h1>
+<h2>Deskripsi</h2>
+
+<p>Ini adalah generator font icons dengan file image .svg, yang hasil akan seperti yang sering kita kenal "fontawesome, material icon dan font icons lainnya"</p>
+
+<h2>Cara menggunakan</h2>
 
 <ul>
     <li>Clone repository ini</li>
@@ -8,10 +12,10 @@
     <li>Copy semua file .svg anda kedalam folder icons "Dengan catatan warna icons anda harus berwarna hitam" & "nama icons akan digunakan untuk pemanggilan class icons di html, di harapkan harus disesuaikan dengan nama yang anda inginkan"</li>
     <li>Kemudian masuk kedalam terminal dan menuju folder project ini</li>
     <li>Ketik "npm install"</li>
-    <li>Ketik "npm run build"</li>
-    <li>Jika berhasil silahkan anda buka file index.html dengan browser anda</li>
+    <li>Ketik "npm run build-watch" untuk build icons dan melihat keseluruhan icons yang telah di convert dengan default local server "http://localhost:8080/"</li>
+    <li>Tutup dan ulangin perintah "npm run build-watch" JIKA ADA PENAMBAHAN, PERGANTIAN, ATAU PENGURANGAN FILE ICON .SVG ANDA</li>
     <li>Jika sudah muncul icon-icon yg anda masukan ke dalam folder icons dan contoh penggunaan font iconsnya berarti anda sudah berhasil</li>
-    <li>Jika sudah berhasil silahkan anda copy "file css yg berada di dalam folder css ke dalam folder css project yang anda akan gunakan"</li>
+    <li>Jika sudah berhasil silahkan anda copy "file my-font-icons.css yg berada di dalam folder css ke dalam folder css project yang anda akan gunakan"</li>
     <li>Dan juga jangan lupa untuk copy "folder my-web-fonts ke dalam folder project yang anda akan gunakan:</li>
 </ul>
 <hr/>

@@ -1,54 +1,38 @@
-const path = require('path');
-
-const TerserPlugin = require('terser-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-
+const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-    entry: './index.js',
-    plugins: [
-        new TerserPlugin(),
-        new CleanWebpackPlugin(),
-        new MiniCssExtractPlugin({
-            filename: 'styles.css',
-        })
-    ],
+    entry: { 
+        index: path.resolve(__dirname, "src", "index.js") 
+    },
     output: {
-        filename: 'bundle.js',
-        path: path.resolve(__dirname, './dist'),
-        publicPath: 'dist/'
+        path: path.resolve(__dirname, "dist")
     },
     module: {
-        rules: [
-            {
-                test: /\.css$/,
-                use: [
-                    MiniCssExtractPlugin.loader, 'css-loader'
-                ]
-            },
-            {
-                test: /\.scss$/,
-                use: [
-                    MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'
-                ]
-            },
-            {
-                test: /\.(svg|eot|woff|woff2|ttf)$/,
-                use: ['file-loader']
-            },
-            {  
-                test: /\.js$/,
-                exclude: /node_modules/,
-                use: {
-                    loader: 'babel-loader',
-                    options: {
-                        presets: ['@babel/env', '@babel/preset-react']
-                    }
-                }
-            }
-        ]
+      rules: [
+        {
+            test: /\.css$/,
+            use: ["style-loader", "css-loader"]
+        },
+        {
+            test: /\.scss$/,
+            use: ["style-loader", "css-loader", "sass-loader"]
+        },
+        {
+            test: /\.js$/,
+            exclude: /node_modules/,
+            use: ["babel-loader"]
+        }
+      ]
     },
-    mode: 'none',
-    target: 'node'
-}
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: path.resolve(__dirname, "src", "index.html")
+        })
+    ],
+    optimization: {
+        splitChunks: { 
+            chunks: "all" 
+        }
+    }
+};
