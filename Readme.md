@@ -1,6 +1,6 @@
 <h2>Deskripsi</h2>
 
-<p>Ini adalah generator font icons dari file image .svg, yang hasil akan seperti yang sering kita kenal "fontawesome, material icon dan font icons lainnya"</p>
+<p>Ini adalah generator font icons dari file image .svg, yang hasilnya akan seperti yang sering kita kenal "fontawesome, material icon dan font icons lainnya"</p>
 
 <h2>Cara menggunakan</h2>
 
